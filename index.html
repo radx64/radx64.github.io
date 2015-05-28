@@ -1,2 +1,68 @@
-<h1> radx64.github.io </h1>
-<h4> Nothing to see here... </h4>
+<!doctype html>
+<html lang="en">
+<title>...</title>
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="typed.js" type="text/javascript"></script>
+
+
+    <script>
+    $(function(){
+
+        $("#typed").typed({
+            strings: [
+            "Loading Monitor program",
+            "000000: 00 00 00 AF C2 54 12 90<br>000008: AA 12 23 54 55 52 99 9F<br>000010: 00 10 03 12 25 20 FF FF<br>00001F: FF FF FF FF FF FF FF FF<br>",
+            "Initializing... ^1000<br>    Welcome Guest,<br>    ^500Seeking prompt program on tape...^500",
+            "[  0%]",
+            "[ 25%]",
+            "[ 50%]",
+            "[ 75%]",
+            "[100%]",
+            "Nope...",
+            "Nothing...",
+            "Really nothing here... ",
+            "Better luck next time, ^1000maybe ^500not^500",
+            "Please check my GitHub page below"
+            ],
+            typeSpeed: 50,
+            backDelay: 100,
+            startDelay: 500,
+            loop: false,
+            cursorChar: "|",
+            contentType: 'html', // or text
+            // defaults to false for infinite loop
+            loopCount: false,
+            callback: function(){ foo(); },
+            resetCallback: function() { newTyped(); }
+        });
+
+        $(".reset").click(function(){
+            $("#typed").typed('reset');
+        });
+
+    });
+
+    function newTyped(){ /* A new typed object */ }
+
+    function foo(){ console.log("Callback"); }
+
+    </script>
+ <link href="console.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="css-typing">
+	<h4> radx64.github.io </h4>
+	<h4> ================ </h4>
+
+	<div class="wrap">
+		<span id="typed" style="white-space:pre;"></span>
+	</div>
+	<div class="links">
+	<a href="https://github.com/radx64"> My</a> 
+	<a href="https://github.com/radx64"> GitHub</a> 
+	<a href="https://github.com/radx64"> page </a>
+</div>
+
+
+</body>
