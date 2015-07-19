@@ -7,21 +7,22 @@
 
 body{
 	font-family: "VT323", sans-serif;
-	font-size: 150%;
+	font-size: 200%;
 	background:#000;
 	color:#0F0;
-	text-shadow: 0px 0px 10px #0F0 ;
+	text-shadow: 0px 0px 50px #0F0 ;
 }
 
 a{
 	text-decoration: none;
-	text-shadow: 0px 0px 15px #0F0 ;
+	text-shadow: 0px 0px 55px #0F0 ;
 	color:#0F0;
 }
 	a:hover{
 		color:#000;
-		text-shadow: 2px 2px 25px #0F0 ;
-		background: #0F0
+		text-shadow: 2px 2px 150px #0F0 ;
+		background: #0F0 ;
+		background-shadow: 2px 2px 150px #0F0 ;
 	}
 p{
 	line-height: 2em;
