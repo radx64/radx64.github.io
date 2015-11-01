@@ -7,15 +7,18 @@
 
 body{
 	font-family: "Press Start 2P", sans-serif;
-	font-size: 100%;
-	background:black;
+	font-size: 120%;
+	background: black;
 	color:#9DF;
-	text-shadow: 0px 0px 60px #FFF ;
+	text-shadow: 2px 2px 60px #FFF ;
+	height: 120%;
+
 }
 
 .css-typing{
 	border: 32px solid #259;
-	background:#259;
+	background: #259;
+
 }
 
 a{
