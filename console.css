@@ -7,11 +7,11 @@
 
 body{
 	font-family: "Press Start 2P", sans-serif;
-	font-size: 120%;
 	background: black;
 	color:#9DF;
-	text-shadow: 2px 2px 60px #FFF ;
-	height: 120%;
+	text-shadow: 2px 2px 80px #FFF ;
+	height: 200%;
+	line-height: 150%;
 
 }
 
@@ -22,6 +22,7 @@ body{
 }
 
 a{
+	line-height: 2em;
 	text-decoration: none;
 	text-shadow: 0px 0px 50px #FFF ;
 	color:#9DF;
@@ -58,8 +59,9 @@ p{
 }
 
 .typed-cursor{
+	font-family: "Press Start 2P", sans-serif;
     opacity: 1;
-    font-weight: 10;
+    font-weight: 20;
     -webkit-animation: blink 0.7s infinite;
     -moz-animation: blink 0.7s infinite;
     -ms-animation: blink 0.7s infinite;
