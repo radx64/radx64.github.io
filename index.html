@@ -14,13 +14,13 @@
 
     var intro = "READY^2000<br>LOAD PROJECTS 8,1^4000";
 
-    var html = 
-    "Some of my projects:<br>" + 
-    get_gh_link("uBasic") + "    - small basic interpreter <br>" + 
-    get_gh_link("uOS") + "       - tiny x86 operating system <br>" + 
-    get_gh_link("Mario") + "     - recreation of classic Nintendo game in C++ and SDL2<br>" + 
-    get_gh_link("Raytracer") + " - 3D scenes generation using ray tracing method<br>" + 
-    get_gh_link("VM") + "        - small and simple, pure virtual machine<br>" + 
+    var html =
+    "Some of my projects:<br>" +
+    get_gh_link("uBasic") + "    - small basic interpreter <br>" +
+    get_gh_link("uOS") + "       - tiny x86 operating system <br>" +
+    get_gh_link("Mario") + "     - recreation of classic Nintendo game in C++ and SDL2<br>" +
+    get_gh_link("Raytracer") + " - 3D scenes generation using ray tracing method<br>" +
+    get_gh_link("VM") + "        - small and simple, pure virtual machine<br>" +
     get_gh_link("yabi") + "      - yet another brainf**k interpreter<br>"
     + "<br><br>For more please visit <a href=\"https:\/\/github.com\/radx64\">my page</a>" ;
     $(function(){
@@ -55,19 +55,27 @@
  <link href="console.css" rel="stylesheet"/>
 </head>
 <body>
-<div class="css-typing" align="center">
-	<a> **** radx64.github.io **** </a><br>
-	<a> 64K RAM SYSTEM  NONE OF BASIC BYTES FREE </a><br>
+    <div>
+    <h1 align="right">radx64.github.io</h1>
+    <div class="monitor_bezel">
+        <div class="monitor">
+            <div class="css-typing" align="center">
+            	<a> 64K RAM SYSTEM  NONE OF BASIC BYTES FREE </a><br>
+            </div>
+            <div class="css-typing">
+            	<div class="wrap">
+            		<span id="typed" style="white-space:pre;"></span>
+                </div>
+            </div>
+        </div>
+        <br>
+    <div class="monitor_bottom_outer">
+        <div class="monitor_bottom_inner">
+            <div class="monitor_power_button" align="right" width="30px">
+                <div class="monitor_power_led"> </div>
+            </div>
+        </div>
+    </div>
 </div>
-<div class="css-typing">
-	<div class="wrap">
-		<span id="typed" style="white-space:pre;"></span>
-	</div>
-	<div class="links">
-	<br>
-	<br>
-	
 </div>
-
-
 </body>
