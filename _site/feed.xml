@@ -3,8 +3,8 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://localhost:4000/</id>
   <title>radx64</title>
-  <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2025-01-19T18:22:33+01:00</updated>
+  <subtitle>Notes on programming, devopsing and struggling with stuff</subtitle>
+  <updated>2025-01-19T18:47:25+01:00</updated>
   <author>
     <name>Radek Szewczyk</name>
     <uri>http://localhost:4000/</uri>

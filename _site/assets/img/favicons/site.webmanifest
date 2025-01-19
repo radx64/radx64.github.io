@@ -3,7 +3,7 @@
 {
   "name": "radx64",
   "short_name": "radx64",
-  "description": "A minimal, responsive and feature-rich Jekyll theme for technical writing.",
+  "description": "Notes on programming, devopsing and struggling with stuff",
   "icons": [
     {
       "src": "/assets/img/favicons/android-chrome-192x192.png",
