@@ -12,12 +12,12 @@
 #### Installing ruby
 
 ```
-sudo apt install ruby-dev
+sudo apt install ruby-dev ruby-bundler
 ```
 
 #### Installing gems
 
-To install ruby gems as `non-root` user
+To install ruby gems as `non-root` user (not needed as Gemfile has all the gems)
 
 Add to .bashrc
 ```
