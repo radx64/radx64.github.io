@@ -18,16 +18,16 @@ I finally got it up and running. And let me tell you, the feeling of seeing it b
 I was genuinely blown away by how fast and lightweight this thing is. Sure, it's not quite production ready
 (it's definitely not replacing my current daily driver, **Linux Mint Debian Edition 6**), but the experience of building it taught me so much.  
 
-Was it frustrating at times? Yes. Did I liked every second of it anyway? Also yes. If you`re curious about Linux internals and want a hands-on challenge, 
+Was it frustrating at times? Yes. Did I liked every second of it anyway? Also yes. If you're curious about Linux internals and want a hands-on challenge, 
 I can't recommend Linux From Scratch enough. It's an adventure worth taking!
 
 This whole experience got me thinking, *"How low can we go?"* What's the absolute bare minimum of software needed to boot this thing? Could I strip it down even more?  
 
-**Linux From Scratch** includes network support, GCC, Vim, and a bunch of other packages. But what if I will go further? A while back, 
+**Linux From Scratch** includes network support, GCC, Vim, and a bunch of other packages. But what if I will go smaller? A while back, 
 I stumbled across an excellent Linux Foundation conference talk by **Rob Landley** on [YouTube](https://www.youtube.com/watch?v=Sk9TatW9ino). 
 In it, he shared his journey of creating [Toybox](https://github.com/landley/toybox) (a interesting alternative to [BusyBox](https://busybox.net/)) and demonstrated just how minimal you can go.  
 It got me wondering: could I pull that off too? Maybe use both **BusyBox** or **Toybox** to build a super-slim system? Or, for the ultimate challenge, could I write my *own* simple shell completely from scratch?
 
 The possibilities are exciting and slightly terrifying. But hey, what's life without a little experimentation?
 
-Fingers crossed, hope in my next post, I`ll have some hands-on experience to share about this idea. So stay tuned!  
+Fingers crossed, hope in my next post, I'll have some hands-on experience to share about this idea. So stay tuned!  
