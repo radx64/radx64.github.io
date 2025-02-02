@@ -44,15 +44,15 @@ If you're on a different distro, you might need to find the equivalent packages 
 
 This process is actually quite straightforward and can be done in a few simple steps.
 
-1. Grab sources (I'll use kernel 6.13 as an example)
+1. Grab sources (I'll use kernel 6.13 as an example).
 ```shell
 $ wget https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.13.tar.xz
 ```
-2. Extract the archive
+2. Extract the archive.
 ```shell
 $ tar -xJf linux-6.13.tar.xz
 ```
-3. Configure the build. Before compiling, we need a configuration file that defines how the kernel will be built, what modules to include, and which debugging features to enable. The simplest way is to use the default config:
+3. Configure the build. Before compiling, we need a configuration file that defines how the kernel will be built, what modules to include, and which debugging features to enable. The simplest way is to use the default config.
 ```shell
 $ cd linux-6.13
 $ make defconfig
@@ -60,7 +60,7 @@ $ make defconfig
 > Note:
 > If you want to make some tweaks in a kernel,  instead of running `make defconfig` config from step above you can call `make menuconfig` which will compile and run TUI based configuration utility, where particular elements of a kernel can be switched on and off.
 
-4. Build
+4. Build.
 ```shell
 $ make -j$(nproc)
 ```
@@ -87,13 +87,13 @@ OK, kernel is ready, now it is time for some spices... ekm... user space apps.
 This step is actually similar to building the kernel. Fetch sources, configure, make, install. Rinse and repeat.
 
 
-1. Get back to you're project root and fetch current BusyBox sources
+1. Get back to you're project root and fetch current BusyBox sources.
 ```shell
 $ cd ..
 $ wget https://www.busybox.net/downloads/busybox-1.37.0.tar.bz2
 ```
 
-2. Extract the archive
+2. Extract the archive.
 ```shell
 $ tar -xjf busybox-1.37.0.tar.bz2
 ```
@@ -104,7 +104,7 @@ $ cd busybox-1.37.0
 $ make defconfig
 ```
 
-4. Make some tweaks. This distro will be small and I'm not bothering right now to deliver any system wide shared libraries, so BusyBox need to be reconfigured to build and link everything statically. Edit `.config` file and change
+4. Make some tweaks. This distro will be small and I'm not bothering right now to deliver any system wide shared libraries, so BusyBox need to be reconfigured to build and link everything statically. Edit `.config` file and change.
 ```
 CONFIG_STATIC=y         # static linking
 CONFIG_MAN=n            # no manual pages
@@ -118,7 +118,7 @@ $ sed 's/^CONFIG_MAN=y/CONFIG_MAN=n/' -i .config
 $ sed 's/^CONFIG_TC=y/CONFIG_TC=n/' -i .config
 $ echo "CONFIG_STATIC_LIBGCC=y" >> .config
 ```
-5. Build
+5. Build.
 ```shell
 $ make -j$(nproc)
 ```
@@ -157,15 +157,15 @@ Finally, it switches to the real root filesystem and executes the system's main 
 
 ### Let's get back to work
 
-Now that the kernel is ready, it's time to set up an initramfs-a minimal root filesystem that will be loaded into memory at boot. This will include BusyBox as our user-space toolkit and a simple init script to launch a shell.
+Now that the kernel is ready, it's time to set up an initramfs, a minimal root filesystem that will be loaded into memory at boot. This will include BusyBox as our user-space toolkit and a simple init script to launch a shell.
 
-1. Create directory for contents of our initramfs filesystem
+1. Create directory for contents of our initramfs filesystem.
 ```shell
 $ cd ..
 $ mkdir initramfs
 ```
 
-2. Next, install the previously built BusyBox binaries into the initramfs directory:
+2. Next, install the previously built BusyBox binaries into the initramfs directory.
 ```shell
 $ cd busybox-1.37.0
 $ make CONFIG_PREFIX=../initramfs install
@@ -173,7 +173,7 @@ $ rm ../initramfs/linuxrc
 $ cd ..
 ```
 
-3. Create basic executable `init` script that will be run by kernel as a first process
+3. Create basic executable `init` script that will be run by kernel as a first process.
 ```shell
 $ cd initramfs
 $ touch ./init
@@ -191,9 +191,9 @@ ln -sf /dev/null /dev/tty4
 > The script explanation:
 > - creates fake tty devices (tty2, tty3, tty4) because BusyBox expects them and will throw warnings if they are missing
 > - The most important line is /bin/sh, which launches a shell, allowing us to interact with the system.
-> - Since this is a very minimal system, many things are missing-there's not even a /proc directory, meaning tools like top won`t work.
+> - Since this is a very minimal system, many things are missing, there's not even a /proc directory, meaning tools like top won`t work.
 
-5. Generate intramfs image
+5. Generate intramfs image.
 ```shell
 $ find . | cpio -o -H newc > ../initramfs.cpio
 ```
@@ -220,17 +220,17 @@ As a final step, we'll create a small disk image with a FAT partition, install S
 $ dd if=/dev/zero of=./boot.img bs=1M count=64
 ```
 
-2. Create FAT filesystem there
+2. Create FAT filesystem there.
 ```shell
 $ mkfs -t fat ./boot.img
 ```
 
-3. Install syslinux bootloader inside the disk image
+3. Install syslinux bootloader inside the disk image.
 ```shell
 $ syslinux ./boot.img
 ```
 
-4. By default, Syslinux will pause at a boot: prompt, waiting for manual input. To automate the boot process, we need to create a simple `syslinux.cfg` file.
+4. By default, Syslinux will pause at a `boot:` prompt, waiting for manual input. To automate the boot process, we need to create a simple `syslinux.cfg` file.
 ```shell
 touch ./syslinux.cfg
 ```
@@ -247,7 +247,7 @@ LABEL minimal
 This tells Syslinux to:
 - Use bzImage as the kernel
 - Load initramfs.cpio as the initial RAM filesystem
-- Boot automatically after a short timeout
+- Boot automatically with default selection of boot target `minimal`
 
 5. Mount image and copy all prepared files. Since mounting filesystems requires root privileges, this part is a bit tricky:
 ```shell
