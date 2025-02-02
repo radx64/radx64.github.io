@@ -270,4 +270,4 @@ At this point, the system is fully bootable from a disk image rather than just u
 
 ## Summary
 
-In this blog post, we built a minimal Linux system. First, we compiled the Linux kernel and created an initramfs with BusyBox. We then tested the system in QEMU to ensure everything was working. Finally, we created a bootable disk image, installed Syslinux as the bootloader, and booted the system successfully. This process highlighted the flexibility of building custom Linux setups, and though basic, it serves as a foundation for more complex configurations and give us a solid foundation for further experiments.
+In this blog post, we built a minimal Linux system. First, we compiled the Linux kernel and created an initramfs with BusyBox. We then tested the system in QEMU to ensure everything was working. Finally, we created a bootable disk image, installed Syslinux as the bootloader, and booted the system successfully. This process highlighted the flexibility of building custom Linux setups, and though basic, it serves as a foundation for more complex configurations and give us a solid start for further experiments.
