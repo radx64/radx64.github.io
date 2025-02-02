@@ -4,13 +4,13 @@ title: "Minimal Linux distribution - Part 2: Kernel + busybox"
 # category: "linux" // categories are working based on path also, no need to tag :)
 ---
 
-Last week, I mentioned my goal of building something even *more* minimal than **Linux From Scratch** - basically, a DIY Linux system from just a kernel, a few user-space tools, and a bootloader. Well... I think I`ve got it!
+Last week, I mentioned my goal of building something even *more* minimal than **Linux From Scratch** - basically, a DIY Linux system from just a kernel, a few user-space tools, and a bootloader. Well... I think I've got it!
 
 If you're feeling adventurous and want to replicate my setup, here's how I did it.  
 
 ## The Plan
 
-I`m keeping it simple:  
+I'm keeping it simple:  
 1. **Compile** the Linux Kernel
 2. **Build BusyBox** - a tiny userspace suite that replaces core UNIX utilities
 3. **Package** it all up into a bootable image using **Syslinux**
@@ -38,7 +38,7 @@ If you're using apt as your package manager, just run:
 ```shell
 $ sudo apt install <list_of_packages>
 ```
-If you`re on a different distro, you might need to find the equivalent packages yourself. But hey, that's part of the fun, right?
+If you're on a different distro, you might need to find the equivalent packages yourself. But hey, that's part of the fun, right?
 
 ## Building Kernel
 
@@ -66,7 +66,7 @@ $ make -j$(nproc)
 ```
 > The `-j$(nproc)` flag tells make to use all available CPU cores for faster compilation.
 
-5. Wait and let it do its thing. Now's a good time to grab a coffee, because this step takes a while. Since I`m playing it safe, I`m compiling a lot of extra drivers and modules. Once the build finishes, you should see something like this in your terminal:
+5. Wait and let it do its thing. Now's a good time to grab a coffee, because this step takes a while. Since I'm playing it safe, I'm compiling a lot of extra drivers and modules. Once the build finishes, you should see something like this in your terminal:
 ```shell
 ...
   OBJCOPY arch/x86/boot/vmlinux.bin
@@ -80,7 +80,7 @@ Kernel: arch/x86/boot/bzImage is ready  (#1)
 OK, kernel is ready, now it is time for some spices... ekm... user space apps.
 
 > Note:
-> Technically, you can already try booting this kernel in QEMU with `qemu-system-x86_64 -kernel arch/x86/boot/bzImage` However, it will start booting and then crash into a kernel panic. Trust me, I`ve tried. A kernel alone isn't enough-it needs a user-space environment to function properly. That's the next step.
+> Technically, you can already try booting this kernel in QEMU with `qemu-system-x86_64 -kernel arch/x86/boot/bzImage` However, it will start booting and then crash into a kernel panic. Trust me, I've tried. A kernel alone isn't enough-it needs a user-space environment to function properly. That's the next step.
 
 ## Building BusyBox
 
