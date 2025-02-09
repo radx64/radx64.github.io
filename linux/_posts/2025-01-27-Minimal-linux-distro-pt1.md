@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "Minimal Linux distribution - Part 1: LFS"
-# category: "linux" // categories are working based on path also, no need to tag :)
+categories: [linux, minimal series]
+tags: [devops, linux, lfs]
 ---
 
 A little while back, I decided to take the plunge and build my very own Linux distribution using the **[Linux From Scratch](https://www.linuxfromscratch.org/)** project. Spoiler alert: it was a wild ride!  

@@ -1,7 +1,9 @@
 ---
 layout: post
 title: "Hello World!"
-# category: "linux" // categories are working based on path also, no need to tag :)
+categories: [linux, devops]
+tags: [devops, blog, jekyll]
+
 ---
 For a long time, I had been toying with the idea of setting up my own blog. I imagined sharing my thoughts, ideas, experiences and making some my private notes helpful for someone else but I always found myself putting it off, unsure of where to start or how to do it. As someone who isn't an experienced devops, the thought of creating and maintaining a website seemed daunting. But recently, I decided to finally take the plunge and set up a blog using Jekyll and GitHub Pages. It turned out to be a lot simpler than I expected - see `README.md` of this blog repository [here](https://github.com/radx64/radx64.github.io/blob/master/README.md).
 

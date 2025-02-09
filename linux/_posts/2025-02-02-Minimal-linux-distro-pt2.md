@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "Minimal Linux distribution - Part 2: Kernel + busybox"
-# category: "linux" // categories are working based on path also, no need to tag :)
+categories: [linux, minimal series]
+tags: [devops, linux, busybox]
 ---
 
 Last week, I mentioned my goal of building something even *more* minimal than **Linux From Scratch** - basically, a DIY Linux system from just a kernel, a few user-space tools, and a bootloader. Well... I think I've got it!

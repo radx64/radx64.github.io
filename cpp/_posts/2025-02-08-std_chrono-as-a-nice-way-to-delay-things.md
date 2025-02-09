@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "Using std::chrono as a nice way to delay things"
-# category: "cpp" // categories are working based on path also, no need to tag :)
+categories: [cpp, general]
+tags: [chrono, gameengine, literals]
 ---
 
 ### It always starts easy
@@ -98,7 +99,7 @@ It is a template class with two template arguments `Rep` representing underlying
 So we can define our `Duration` as:
 
 ```cpp
-    using rep = uint32_t;                   // timer ticks are counter as uint32_t
+    using rep = uint32_t;                   // timer ticks are counted as uint32_t
     using period = std::ratio<1, 1000>;     // 1 tick takes 1 milisecond (1000 ticks in one second)
     using duration = std::chrono::duration<rep, period>; // our chrono duration
 ```
