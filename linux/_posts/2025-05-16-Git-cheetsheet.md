@@ -42,3 +42,17 @@ or on older GIT clients create and track a remote branch locally
 ```bash
 git checkout -b <branch_name> <name of remote>/<branch_name>
 ```
+
+### Stash changes
+Save your local modifications temporarily
+```bash
+git stash
+```
+
+### Make a branch for local changes and push to remote
+```bash
+git checkout -b <branch_name>
+git add .
+git commit -m "your commit message"
+git push origin <branch_name>
+```
